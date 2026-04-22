@@ -23,16 +23,50 @@ minimal-theme/
 └── preview.png                # Thumbnail shown in back-office
 ```
 
-## Available commands
+## Building the zip
 
-| Command      | Description                                      |
-|--------------|--------------------------------------------------|
-| `make zip`   | Build `minimal-theme.zip` ready for upload       |
-| `make clean` | Remove the generated zip                         |
+Two options are available to create `minimal-theme.zip`:
+
+### Option 1 — Using Make
+
+| Command      | Description                                |
+| ------------ | ------------------------------------------ |
+| `make zip`   | Build `minimal-theme.zip` ready for upload |
+| `make clean` | Remove the generated zip                   |
+
+<details>
+<summary>Installing Make</summary>
+
+| OS                          | Command                                                                                                   |
+| --------------------------- | --------------------------------------------------------------------------------------------------------- |
+| **Linux (Debian / Ubuntu)** | `sudo apt install make`                                                                                   |
+| **Linux (Fedora)**          | `sudo dnf install make`                                                                                   |
+| **macOS**                   | `xcode-select --install`                                                                                  |
+| **Windows**                 | `winget install GnuWin32.Make` or install via [Chocolatey](https://chocolatey.org/): `choco install make` |
+
+</details>
+
+### Option 2 — Using the shell script
+
+If you don't have (or don't want to install) Make, you can use the provided
+shell script:
+
+```bash
+bash zip.sh
+```
+
+> [!TIP]
+>
+> On Linux / macOS you can also make it executable and run it directly:
+>
+> ```bash
+> chmod +x zip.sh
+> ./zip.sh
+> ```
 
 ## Installation
 
-1. Run `make zip` to package the theme.
+1. Build the zip with **`make zip`** or **`bash zip.sh`** (see above).
 2. In your PrestaShop back-office, go to **Design > Theme & Logo**.
 3. Click **Add new theme** and upload `minimal-theme.zip`.
 4. Activate the theme.
